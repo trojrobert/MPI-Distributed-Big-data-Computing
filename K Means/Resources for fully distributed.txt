@@ -1,0 +1,8 @@
+## Distribution process
++ P0 is the master process
++ P0 will divide the datasets in rows and each row is assigned to P processes, including P0.
++ P0  generates k random centroids.
++ All processes are responsible for computing the local mean of the datasets received through the scatter process.
++ Once, local mean calculated inside each P, the sum of each individual local mean is reduced at P0.
++ P0 then compute the global mean for P processes.
++ Determines if the program has converged to K centroids by comparing previous centroid with global mean.
